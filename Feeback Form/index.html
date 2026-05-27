@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback for Priangshu</title>
+    <meta name="description" content="Share your honest feedback to help Priangshu grow in his career.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Error Screen (hidden by default) -->
+    <div id="error-screen" class="container hidden">
+        <div class="error-icon">🔗</div>
+        <h2>Invalid Link</h2>
+        <p class="error-text">This link doesn't seem to be valid. Please use the personalized link shared by Priangshu.</p>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="container">
+        <div class="loader"></div>
+        <p>Loading your page...</p>
+    </div>
+
+    <!-- Main Content (hidden by default) -->
+    <div id="main-content" class="container hidden">
+
+        <!-- Profile Section -->
+        <div id="profile">
+            <img id="person-image" src="" alt="Profile Photo">
+            <h1 id="person-name"></h1>
+            <p id="person-designation"></p>
+        </div>
+
+        <!-- Personal Note -->
+        <div class="note-container">
+            <h3>✉️ A Note from Priangshu</h3>
+            <p id="personal-note"></p>
+        </div>
+
+        <!-- Feedback Guidance -->
+        <div class="guidance-container">
+            <h3>✨ Your thoughts can include:</h3>
+            <ul>
+                <li><span>🌟</span> <strong>Strengths & Skills:</strong> Momentous contributions, skills, or projects where I did well.</li>
+                <li><span>📈</span> <strong>Growth & Improvement:</strong> Constructive suggestions to help me learn, refine, and improve.</li>
+                <li><span>💭</span> <strong>Memories & Wishes:</strong> Wishes, advice, or shared memories you cherish from our time together.</li>
+            </ul>
+        </div>
+
+        <!-- Feedback Form -->
+        <form id="feedback-form">
+            <label id="feedback-label" for="feedback">Your Feedback:</label>
+            <textarea name="feedback" id="feedback" rows="8" placeholder="Write your honest feedback here... Your words will help shape my future. Thank you! 🙏" required></textarea>
+            <button type="submit" id="submit-btn">
+                <span id="btn-text">Send Feedback 💌</span>
+                <span id="btn-loader" class="hidden">Sending...</span>
+            </button>
+        </form>
+
+        <p id="status-message"></p>
+    </div>
+
+    <!-- Thank You Screen (hidden by default) -->
+    <div id="thankyou-screen" class="container hidden">
+        <div class="thankyou-icon">🎉</div>
+        <h2>Thank You, <span id="thankyou-name"></span>!</h2>
+        <p class="thankyou-text">Your feedback has been received successfully. It means the world to me and will help me grow both personally and professionally.</p>
+        <p class="thankyou-quote">"The greatest gift you can give someone is your honest feedback."</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

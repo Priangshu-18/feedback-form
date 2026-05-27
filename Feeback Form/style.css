@@ -1,0 +1,411 @@
+/* ============================
+   1. Reset & Global Styles
+   ============================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animated background particles */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(119, 73, 248, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: floatBg 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes floatBg {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-50px) rotate(2deg); }
+}
+
+/* ============================
+   2. Container (Glassmorphism)
+   ============================ */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 36px;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Hidden utility */
+.hidden {
+    display: none !important;
+}
+
+/* ============================
+   3. Loading Screen
+   ============================ */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #a78bfa;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loading-screen p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+/* ============================
+   4. Error Screen
+   ============================ */
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+#error-screen h2 {
+    color: #f87171;
+    margin-bottom: 12px;
+}
+
+.error-text {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+/* ============================
+   5. Profile Section
+   ============================ */
+#person-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(167, 139, 250, 0.5);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.25);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+#person-image:hover {
+    transform: scale(1.05);
+}
+
+/* Default avatar for missing photos */
+#person-image[src=""],
+#person-image:not([src]) {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+#person-designation {
+    color: #a78bfa;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+/* ============================
+   6. Personal Note Box
+   ============================ */
+.note-container {
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    padding: 24px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.note-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #a78bfa, #667eea);
+    border-radius: 4px;
+}
+
+.note-container h3 {
+    font-size: 0.75rem;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+#personal-note {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.75;
+    font-size: 0.95rem;
+}
+
+/* ============================
+   7. Feedback Guidance Box
+   ============================ */
+.guidance-container {
+    background: rgba(56, 161, 105, 0.08);
+    border: 1px solid rgba(56, 161, 105, 0.15);
+    padding: 20px 24px;
+    border-radius: 18px;
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.guidance-container h3 {
+    font-size: 0.75rem;
+    color: #68d391;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.guidance-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.guidance-container li {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    padding: 2px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.guidance-container li::before {
+    content: none;
+}
+
+.guidance-container li span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.guidance-container li strong {
+    color: #ffffff;
+}
+
+/* ============================
+   8. Feedback Form
+   ============================ */
+#feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 4px;
+}
+
+textarea {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    resize: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #a78bfa;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.1);
+}
+
+/* ============================
+   9. Submit Button
+   ============================ */
+#submit-btn {
+    background: linear-gradient(135deg, #a78bfa 0%, #667eea 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 8px;
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#submit-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+#submit-btn:hover::after {
+    transform: translateX(100%);
+}
+
+#submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(167, 139, 250, 0.45);
+}
+
+#submit-btn:active {
+    transform: translateY(-1px);
+}
+
+#submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================
+   10. Status Message
+   ============================ */
+#status-message {
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #68d391;
+}
+
+#status-message.error {
+    color: #f87171;
+}
+
+/* ============================
+   11. Thank You Screen
+   ============================ */
+.thankyou-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#thankyou-screen h2 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+#thankyou-screen h2 span {
+    color: #a78bfa;
+}
+
+.thankyou-text {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.thankyou-quote {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
+
+/* ============================
+   12. Responsive Design
+   ============================ */
+@media (max-width: 600px) {
+    .container {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #person-image {
+        width: 110px;
+        height: 110px;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+    }
+}

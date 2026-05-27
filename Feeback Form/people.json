@@ -1,0 +1,44 @@
+[
+    {
+        "id": "rahul",
+        "name": "Rahul Sir",
+        "designation": "CTO",
+        "photo": "../images/rahul.png",
+        "note": "Working with you has been an incredible journey. I still vividly remember the day I was selected; those nine months have been a period of immense growth and learning for me. Thank you for believing in me and giving me this opportunity. As I move forward, your honest feedback on my strengths and areas for improvement would mean the world to me. My only regret from this wonderful time is that I couldn't join that one trip you invited me on—it's a memory I wish I had made!"
+    },
+    {
+        "id": "tushar",
+        "name": "Tushar Sir",
+        "designation": "Project Manager",
+        "photo": "../images/tushar.jpeg",
+        "note": "It has been a privilege working under your guidance. I've always admired your kind and approachable nature—and even those 'managerial' moments of toughness taught me a lot! I'll never forget how you looked out for me, even taking me to the hospital for my antirabies vaccine. From sitting together to analyze calls for sending it to Sagar bhai, to taking over ConvoAI within a month, every moment was a learning curve. I always tried my best to handle things independently to respect your time. Please share your thoughts on how I can improve further; your guidance is invaluable. And any future task from you will always be my 'top priority'! 😅"
+    },
+    {
+        "id": "krinal",
+        "name": "Krinal Ma'am",
+        "designation": "AI ML Team Leader",
+        "photo": "../images/krinal.jpeg",
+        "note": "Working with you on the Prestige Genie chatbot was one of the highlights of my internship. Learning to build APIs and refine prompts under your mentorship gave me so much confidence. Your kindness and support made the complex tasks feel achievable. Thank you for training me and being so patient. I would love to hear your feedback on my journey so I can keep growing. There are so many things I will remember and cherish from my internship, and one of them is definitely 'Loi pidhi che'! 😅"
+    },
+    {
+        "id": "pinkal",
+        "name": "Pinkal Sir",
+        "designation": "PHP Team Leader",
+        "photo": "../images/pinkal.jpeg",
+        "note": "Collaborating with you on the production-level Genie was such a great experience. Your jokes were the perfect 'refreshment' during those long days of prompt refinement. I still laugh thinking about you saying, 'Even when I sleep, the Genie bot is running in my head!' 😂 Thank you for making the workplace so lively. I'd truly appreciate your feedback on my work to help me in my future career. At last, aapki party baki reh gyi agar kabhi mulakat hogi toh zarur ye task bhi complete karunga!"
+    },
+    {
+        "id": "vivek",
+        "name": "Vivek Sir",
+        "designation": "PHP Developer",
+        "photo": "../images/vivek.jpeg",
+        "note": "I'll always remember my very first task from you—analyzing call recordings. From that start to working together on the production-level Genie, it's been a pleasure. Your humor always made the challenging days of prompt refinement so much easier. Thank you for the support and the laughs. I would really value your feedback on my performance to help me grow as a developer. Wishing you all the best!"
+    },
+    {
+        "id": "komal",
+        "name": "Komal Ma'am",
+        "designation": "HR",
+        "photo": "../images/komal.jpeg",
+        "note": "I will always cherish the memory of your call telling me I was selected. I was so worried because I arrived an hour late due to traffic for the practical exam, thinking I'd lost the chance because of my lack of punctuality. That day taught me a lesson I'll never forget, and I'm proud of how punctual I've become since. Thank you for your constant cooperation over these nine months. I would be so grateful for your feedback on my growth. I can still hear your voice every time you'd ask, 'Kaisa chal rha hai Priangshu, aapka internship?'—it always made me feel welcome!"
+    }
+]
