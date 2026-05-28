@@ -56,7 +56,7 @@ fetch('people.json')
 
             // Update form label and placeholder to be personalized
             document.getElementById('feedback-label').innerText = `Your Feedback, ${displayName}:`;
-            document.getElementById('feedback').placeholder = `Write your honest feedback here, ${displayName}... Your words will help shape my future. Thank you! 🙏`;
+            document.getElementById('feedback').placeholder = `Please write your honest thoughts here, ${displayName}... Your words will help shape my future. Thank you so much! 🙏`;
 
             // Also set the thank-you name
             document.getElementById('thankyou-name').innerText = displayName;
@@ -111,7 +111,7 @@ document.getElementById('feedback-form').addEventListener('submit', function(e) 
         btnText.classList.remove('hidden');
         btnLoader.classList.add('hidden');
         const statusMsg = document.getElementById('status-message');
-        statusMsg.innerText = 'Something went wrong. Please try again.';
+        statusMsg.innerText = 'Oops! We encountered a slight issue. Please kindly try submitting again. Thank you!';
         statusMsg.classList.add('error');
     });
 });
